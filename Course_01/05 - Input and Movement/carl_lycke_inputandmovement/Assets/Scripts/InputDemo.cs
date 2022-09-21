@@ -4,10 +4,12 @@ public class InputDemo : ProcessingLite.GP21
 {
     [Header("Attributes")]
     [SerializeField, Range(0, 2)] float radius = 2f;
+    
     [SerializeField] float velocity = 10f;
+    [SerializeField] float maxVelocity = 20f;
     [SerializeField] float acceleration = 10f;
-    [SerializeField] float maxVelocity = 100f;
     [SerializeField] float deaccelerationSpeed = 30f;
+    
     [SerializeField] Color32 velColor = Color.yellow;
     [SerializeField] Color32 accColor = Color.red;
 
