@@ -14,7 +14,6 @@ public class VectorAssignment : ProcessingLite.GP21
     private void Start()
     {
         circlePosition = new Vector2(Width / 2, Height / 2);
-        float diameter = radius * 2;
     }
 
     // Update is called once per frame
@@ -40,13 +39,10 @@ public class VectorAssignment : ProcessingLite.GP21
         }
         // Circle collision
         if ((circlePosition.y + radius >= Height && cursorPosition.y > 0) || (circlePosition.y - radius <= 0 && cursorPosition.y < 0))
-        {
             cursorPosition.y *= -1;
-        }
         if ((circlePosition.x - radius <= 0 && cursorPosition.x < 0) || (circlePosition.x + radius >= Width && cursorPosition.x > 0))
-        {
             cursorPosition.x *= -1;
-        }
+
         // Moves circle's position toward cursor depending on speed and distance from cursor, then creates the circle at circle's position
         circlePosition += speed * Time.deltaTime * cursorPosition;
         Circle(circlePosition.x, circlePosition.y, radius * 2);
